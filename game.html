@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body" style="background-color: aquamarine;">
+    <h1 id="header1">Typing Game</h1>
+    <div class="gameSection" id="gameSection">
+        <h2 id="display" style="padding: 20px">Key</h2>
+        <p class="displayCount">
+            Correct Inputs: <span id="correct">0</span>
+            Wrong Inputs: <span id="wrong">0</span>
+        </p>
+
+        <button class="resetButton" id="resetButton">Reset</button>
+    </div>
+
+    <script>
+        function randomLetter(){
+            const alphabet = "abcdefghijklmnopqrstuvwxyz";
+            const randomIndex = Math.floor(Math.random() * alphabet.length)
+            return alphabet[randomIndex];
+        }
+
+        const display = document.getElementById("display");
+        const correct = document.getElementById("correct");
+        const wrong = document.getElementById("wrong");
+
+
+        display.innerHTML = randomLetter();
+
+        document.getElementById('body').addEventListener('keyup', function(e){
+            console.log(e.key);
+            if(display.innerHTML == e.key){
+                correct.innerHTML++;
+            }
+            else{
+                wrong.innerHTML++;
+            }
+            display.innerHTML = randomLetter();
+        })
+
+        document.getElementById("resetButton").onclick = function(){
+            correct.innerHTML = 0;
+            wrong.innerHTML = 0;
+        }
+    </script>
+</body>
+</html>
