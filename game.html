@@ -13,10 +13,13 @@
         <p class="displayCount">
             Correct Inputs: <span id="correct">0</span>
             Wrong Inputs: <span id="wrong">0</span>
+            Miss: <span id="miss">0</span>
         </p>
 
         <button class="resetButton" id="resetButton">Reset</button>
     </div>
+
+    <progress value="0" max="100"></progress>
 
     <script>
         function randomLetter(){
@@ -28,6 +31,10 @@
         const display = document.getElementById("display");
         const correct = document.getElementById("correct");
         const wrong = document.getElementById("wrong");
+        const progress = document.querySelector("progress");
+        const miss = document.getElementById("miss");
+        let timmer;
+
 
 
         display.innerHTML = randomLetter();
@@ -41,11 +48,27 @@
                 wrong.innerHTML++;
             }
             display.innerHTML = randomLetter();
+            startTimmer();
         })
 
         document.getElementById("resetButton").onclick = function(){
             correct.innerHTML = 0;
             wrong.innerHTML = 0;
+            miss.innerHTML = 0;
+            progress.value = 0;
+        }
+
+        function startTimmer(){
+            progress.value = 0;
+            clearInterval(timmer);
+            timmer = setInterval(function(){
+                progress.value += 10;
+                if(progress.value >= 100){
+                    miss.innerHTML++;
+                    randomLetter();
+                    startTimmer();
+                }
+            }, 500)
         }
     </script>
 </body>
