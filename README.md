@@ -11,4 +11,4 @@ Misses
 Progress bar serving as a timer.
 Easy-to-use interface with a reset option.
 
-visite = 
+visite = https://upendranilupul.github.io/Typing-Game/
