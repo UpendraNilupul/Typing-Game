@@ -1,14 +1,28 @@
-Typing Game
-A simple typing game built with JavaScript. The game challenges players to type letters correctly and quickly, helping improve typing speed and accuracy.
+# Typing Game
 
-Features
-Randomized letters to type.
-Real-time tracking of:
-Correct Inputs
-Wrong Inputs
-Misses
+A simple web-based typing game where you type the displayed letter as quickly and accurately as possible.
 
-Progress bar serving as a timer.
-Easy-to-use interface with a reset option.
+## Features
 
-visite = https://upendranilupul.github.io/Typing-Game/
+- Random letter appears for you to type
+- Tracks correct, wrong, and missed inputs
+- Progress bar timer for each letter
+- Reset button to restart your score
+
+## How to Run
+
+1. Clone or download this repository.
+2. Open `game.html` in your web browser.
+
+## Files
+
+- [`game.html`](game.html): Main HTML file with embedded JavaScript.
+- [`style.css`](style.css): Styles for the game.
+
+## Screenshot
+
+![Screenshot](screenshot.png) <!-- Add a screenshot if you have one -->
+
+## License
+
+MIT
